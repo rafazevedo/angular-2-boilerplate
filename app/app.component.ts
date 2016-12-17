@@ -7,7 +7,6 @@ import { CursosComponent } from './cursos/cursos.component';
     selector: 'my-app',
     template: `
         <h1>Angular 2 Boilerplate</h1>
-        <p>Oi <b>MEU <span style="color:red;">BEM!</span></b></p>
         <primeiro></primeiro>
         <cursos-lista></cursos-lista>
     `,
