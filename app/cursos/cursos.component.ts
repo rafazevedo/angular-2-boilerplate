@@ -1,18 +1,12 @@
 import {Component} from '@angular/core';
 
-import {CursosService} from './service/cursos.service';
-
 @Component({
     moduleId: module.id,
     selector: 'cursos-lista',
-    templateUrl: './template/cursos.component.html',
-    providers: [CursosService],
+    templateUrl: './template/cursos.component.html'
 })
 export class CursosComponent {
-    nome = "Meu Bem";
-    cursos;
+    nome = 'Meu Bem';
 
-    constructor(service: CursosService){
-        this.cursos = service.getCursos();
-    }
+    cursos = ['Angular 2', 'Java', 'Rosca'];
 }
