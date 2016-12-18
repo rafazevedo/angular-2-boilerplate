@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+    <section class="property-binding">
+        <article>
+            <h3>Interpolation</h3>
+            <p>String binding interpolation (url): <a [attr.href]="url">{{url}}</a></p>
+        </article>
+
+        <article>
+            <h3>Property binding</h3>
+            <img [attr.width]="widthImage" [src]="urlImg" />
+        </article>
+
+        <article>
+            <h3>Class & Style Binding</h3>
+            <div>
+                Select a class (the css kind):
+                <select #cssClass (change)="0">
+                    <option *ngFor="let item of msgType; let i=index" [attr.value]="msgClass[i]">{{item}}</option>
+                </select>
+                <br />
+
+                <div class="alert {{cssClass.value}}" role="alert">
+                    Shame, shame, shame...
+                </div>
+
+                <div class="alert alert-danger" role="alert" [style.display]="cssClass.value == 'alert-danger' ? 'block' : 'none'">
+                    Error message.
+                </div>
+
+                <div class="alert" role="alert" 
+                    [class.alert-success]="cssClass.value=='alert-success'"
+                >Test message, Success;
+                </div>
+                <div class="alert" role="alert" 
+                    [class.alert-info]="cssClass.value=='alert-info'"
+                >
+                    Test message, Info;
+                </div>
+                <div class="alert" role="alert" 
+                    [class.alert-warning]="cssClass.value=='alert-warning'"
+                >
+                    Test message, Warning;
+                </div>
+                <div class="alert" role="alert" 
+                    [class.alert-danger]="cssClass.value=='alert-danger'"
+                >
+                    Test message, Danger;
+                </div>                                                
+            </div>
+        </article>
+    </section>
+</body>
